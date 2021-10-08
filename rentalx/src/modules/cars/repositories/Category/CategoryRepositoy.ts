@@ -1,4 +1,4 @@
-import { Category } from "../entities/Category";
+import { Category } from "../../entities/Category";
 import { ICreateCategoryDto } from "./ICategoryRepositoy";
 
 //**Dto - Date Transfer Object */

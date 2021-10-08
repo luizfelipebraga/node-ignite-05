@@ -1,5 +1,5 @@
-import { CategoryRepository } from "../repositories/CategoryRepositoy";
-import { ICategoryRepositoy } from "../repositories/ICategoryRepositoy";
+import { CategoryRepository } from "../repositories/Category/CategoryRepositoy";
+import { ICategoryRepositoy } from "../repositories/Category/ICategoryRepositoy";
 
 interface ICategoryService {
     name: string;
