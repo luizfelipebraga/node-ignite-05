@@ -13,7 +13,7 @@ export class CategoryService {
         this.categoryRepository = categoryRepository;
     }
 
-    //This way, we dont need to do what i did on top -->> Dependecy Inversion Principle //**constructor(private categoryRepository: CategoryRepository) {}**//
+    //This way, its just a trick to not use "THIS" -->> Dependecy Inversion Principle //**constructor(private categoryRepository: CategoryRepository) {}**//
 
     execute({ name, description }: ICategoryService): void {
         const categoryAlreadyExists = this.categoryRepository.findByName(name);
