@@ -1,4 +1,3 @@
-import { CategoryRepository } from "../repositories/Category/CategoryRepositoy";
 import { ICategoryRepositoy } from "../repositories/Category/ICategoryRepositoy";
 
 interface ICategoryService {
@@ -17,7 +16,7 @@ export class CategoryService {
 
     execute({ name, description }: ICategoryService): void {
         const categoryAlreadyExists = this.categoryRepository.findByName(name);
-
+        
         if (categoryAlreadyExists) {
             throw new Error("Category Already Exists");
         }
