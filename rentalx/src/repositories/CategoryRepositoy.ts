@@ -1,11 +1,9 @@
 import { Category } from "../entities/Category";
+import { ICreateCategoryDto } from "./ICategoryRepositoy";
 
 //**Dto - Date Transfer Object */
 
-interface ICreateCategoryDto {
-    name: string;
-    description: string;
-}
+
 
 export class CategoryRepository {
     private categories: Category[];

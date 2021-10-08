@@ -1,4 +1,5 @@
 import { CategoryRepository } from "../repositories/CategoryRepositoy";
+import { ICategoryRepositoy } from "../repositories/ICategoryRepositoy";
 
 interface ICategoryService {
     name: string;
@@ -6,9 +7,9 @@ interface ICategoryService {
 }
 
 export class CategoryService {
-    private categoryRepository: CategoryRepository;
+    private categoryRepository: ICategoryRepositoy;
 
-    constructor(categoryRepository: CategoryRepository) {
+    constructor(categoryRepository: ICategoryRepositoy) {
         this.categoryRepository = categoryRepository;
     }
 
