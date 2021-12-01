@@ -1,9 +1,7 @@
 import { Specification } from "../../entities/Specification";
 import { ICreateSpecificationDTO } from "./ISpecificationRepository";
 
-
 export class SpecificationRepository {
-    //array do objeto
     private specifications: Specification[];
 
     constructor() {

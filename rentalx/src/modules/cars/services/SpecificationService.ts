@@ -5,7 +5,6 @@ export interface ISpecificationService {
     description: string;
 }
 
-
 export class SpecificationService {
 
     constructor(private specificationService: ISpecificationRepository) { }
