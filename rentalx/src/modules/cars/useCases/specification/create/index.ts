@@ -3,5 +3,5 @@ import { CreateSpecificationUseCase } from "./CreateSpecificationUseCase";
 import { CreateSpecificationController } from "./CreateSpecificationController";
 
 const specificationRepository = new SpecificationRepository();
-const specificationUser = new CreateSpecificationUseCase(specificationRepository);
-export const createSpecificationController = new CreateSpecificationController(specificationUser);
+const specificationUseCase = new CreateSpecificationUseCase(specificationRepository);
+export const createSpecificationController = new CreateSpecificationController(specificationUseCase);
