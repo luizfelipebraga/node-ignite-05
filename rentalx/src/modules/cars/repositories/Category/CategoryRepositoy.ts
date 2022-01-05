@@ -3,33 +3,31 @@ import { ICreateCategoryDto } from "./ICategoryRepositoy";
 
 //**Dto - Date Transfer Object */
 
-
-
 export class CategoryRepository {
-    private categories: Category[];
+  private categories: Category[];
 
-    constructor() {
-        this.categories = [];
-    }
+  constructor() {
+    this.categories = [];
+  }
 
-    create({name, description}: ICreateCategoryDto): void {
-        const category = new Category();
+  create({ name, description }: ICreateCategoryDto): void {
+    const category = new Category();
 
-        Object.assign(category, {
-            name,
-            description,
-            created_at: new Date()
-        });
+    Object.assign(category, {
+      name,
+      description,
+      created_at: new Date(),
+    });
 
-        this.categories.push(category);
-    }
+    this.categories.push(category);
+  }
 
-    list(): Category[] {
-        return this.categories;
-    }
+  list(): Category[] {
+    return this.categories;
+  }
 
-    findByName(name: string): Category {
-        const category = this.categories.find(c => c.name === name)
-        return category;
-    }
+  findByName(name: string): Category {
+    const category = this.categories.find((c) => c.name === name);
+    return category;
+  }
 }
