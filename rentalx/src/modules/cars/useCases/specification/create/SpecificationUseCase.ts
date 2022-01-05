@@ -1,4 +1,4 @@
-import { ISpecificationRepository } from "../../repositories/Specification/ISpecificationRepository";
+import { ISpecificationRepository } from "../../../repositories/Specification/ISpecificationRepository";
 
 export interface ISpecificationUseCase {
   name: string;

@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
-import { CategoryUseCase } from "./CategoryUseCase";
+import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
 
-export class CategoryController {
-  constructor(private categoryUseCase: CategoryUseCase) {}
+export class CreateCategoryController {
+  constructor(private categoryUseCase: CreateCategoryUseCase) {}
 
   handle(request: Request, response: Response): Response {
     const { name, description } = request.body;

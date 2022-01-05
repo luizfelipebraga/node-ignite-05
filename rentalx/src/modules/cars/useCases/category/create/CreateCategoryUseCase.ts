@@ -1,11 +1,11 @@
-import { ICategoryRepositoy } from "../../repositories/Category/ICategoryRepositoy";
+import { ICategoryRepositoy } from "../../../repositories/Category/ICategoryRepositoy";
 
 interface ICategoryCategoryUseCase {
   name: string;
   description: string;
 }
 
-export class CategoryUseCase {
+export class CreateCategoryUseCase {
   private categoryRepository: ICategoryRepositoy;
 
   constructor(categoryRepository: ICategoryRepositoy) {
