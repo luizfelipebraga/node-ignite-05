@@ -5,7 +5,7 @@ export interface ISpecificationUseCase {
   description: string;
 }
 
-export class SpecificationUseCase {
+export class CreateSpecificationUseCase {
   constructor(private specificationService: ISpecificationRepository) {}
 
   execute({ name, description }: ISpecificationUseCase): void {

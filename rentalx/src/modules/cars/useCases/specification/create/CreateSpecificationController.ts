@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
-import { SpecificationUseCase } from "./SpecificationUseCase";
+import { CreateSpecificationUseCase } from "./CreateSpecificationUseCase";
 
-export class SpecificationController {
-  constructor(private specificationUseCase: SpecificationUseCase) {}
+export class CreateSpecificationController {
+  constructor(private specificationUseCase: CreateSpecificationUseCase) {}
 
   handle(request: Request, response: Response): Response {
     const { name, description } = request.body;
