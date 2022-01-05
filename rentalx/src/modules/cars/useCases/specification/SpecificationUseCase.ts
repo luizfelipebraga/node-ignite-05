@@ -6,16 +6,16 @@ export interface ISpecificationUseCase {
 }
 
 export class SpecificationUseCase {
-
-  constructor(private specificationService: ISpecificationRepository) { }
+  constructor(private specificationService: ISpecificationRepository) {}
 
   execute({ name, description }: ISpecificationUseCase): void {
-      const specificationAlreadyExists = this.specificationService.findByName(name);
+    const specificationAlreadyExists =
+      this.specificationService.findByName(name);
 
-      if(specificationAlreadyExists) {
-          throw new Error(`Specification ${name} already exists`);
-      }
+    if (specificationAlreadyExists) {
+      throw new Error(`Specification ${name} already exists`);
+    }
 
-      this.specificationService.create({name, description});
+    this.specificationService.create({ name, description });
   }
 }

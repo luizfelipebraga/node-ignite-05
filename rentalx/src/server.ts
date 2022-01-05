@@ -1,13 +1,12 @@
-import express from 'express';
-import { categoriesRoutes } from './routes/categories.routes';
-import { specificationsRoutes } from './routes/specifications.routes';
+import express from "express";
+import { categoriesRoutes } from "./routes/categories.routes";
+import { specificationsRoutes } from "./routes/specifications.routes";
 
 // import 'routes';
 
 const app = express();
 
 const port = process.env.PORT || 3333;
-
 
 app.use(express.json());
 app.use("/categories", categoriesRoutes);
