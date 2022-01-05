@@ -1,14 +1,24 @@
 import { Category } from "../../entities/Category";
 import { ICreateCategoryDto } from "./ICategoryRepositoy";
 
-//**Dto - Date Transfer Object */
-
 export class CategoryRepository {
   private categories: Category[];
 
-  constructor() {
+  // singleton para funcionar o get categories, para isso precisamos colocar a instancia como private
+  private static INSTANCE: CategoryRepository;
+
+  private constructor() {
     this.categories = [];
   }
+
+  public static getInstance(): CategoryRepository {
+    if (!CategoryRepository.INSTANCE) {
+      CategoryRepository.INSTANCE = new CategoryRepository();
+    }
+
+    return CategoryRepository.INSTANCE;
+  }
+  //fim singleton
 
   create({ name, description }: ICreateCategoryDto): void {
     const category = new Category();
