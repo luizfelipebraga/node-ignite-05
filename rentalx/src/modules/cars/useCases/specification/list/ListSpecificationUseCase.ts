@@ -1,7 +1,6 @@
 import { Specification } from "../../../entities/Specification";
 import { SpecificationRepository } from "../../../repositories/Specification/SpecificationRepository";
 
-
 export class ListSpecificationUseCase {
   //constructor
   constructor(private specificationRepository: SpecificationRepository) {}
