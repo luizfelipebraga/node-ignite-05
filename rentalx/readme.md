@@ -1,3 +1,3 @@
 CHAPTER 2
-Pasta 04 Continuacao da aplicacao
-AULA 9 - Refatorando as Rotas.
+Pasta 05 Continuacao da aplicacao
+AULA 3 - Criando o use case.
