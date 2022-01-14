@@ -1,3 +1,3 @@
 CHAPTER 3
-Pasta 01
-AULA 4 - introducao docker.
+Pasta 02
+AULA 3 - criando container do projeto.
