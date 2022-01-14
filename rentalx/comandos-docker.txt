@@ -1,0 +1,14 @@
+docker ps
+docker-compose up -d = rodar container em background
+docker logs ${container_name} -f = ver os logs sem precisar rodar o docker-compose up
+docker stop ${container_id}
+docker rm ${container_id}
+
+docker-compose stop
+docker-compose down
+
+//acessar o container
+docker exec -it ${container_name} /bin/bash
+
+//sair do container
+ctrl + D
