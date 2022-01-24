@@ -1,14 +1,16 @@
+import { getRepository, Repository } from "typeorm";
 import { Category } from "../../entities/Category";
-import { ICreateCategoryDto } from "./ICategoryRepositoy";
+import { ICategoryRepositoy, ICreateCategoryDto } from "./ICategoryRepositoy";
 
-export class CategoryRepository {
-  private categories: Category[];
+export class CategoryRepository implements ICategoryRepositoy {
 
   // singleton para funcionar o get categories, para isso precisamos colocar a instancia como private
   private static INSTANCE: CategoryRepository;
 
+  private repository: Repository<Category>;
+
   private constructor() {
-    this.categories = [];
+    this.repository = getRepository(Category);
   }
 
   public static getInstance(): CategoryRepository {
@@ -20,24 +22,24 @@ export class CategoryRepository {
   }
   //fim singleton
 
-  create({ name, description }: ICreateCategoryDto): void {
+  async create({ name, description }: ICreateCategoryDto): Promise<void> {
     const category = new Category();
 
-    Object.assign(category, {
+    const categoryObj = this.repository.create({
       name,
       description,
-      created_at: new Date(),
     });
 
-    this.categories.push(category);
+    await this.repository.save(categoryObj);
   }
 
-  list(): Category[] {
-    return this.categories;
+  async list(): Promise<Category[]> {
+    const categories = await this.repository.find();
+    return categories;
   }
 
-  findByName(name: string): Category {
-    const category = this.categories.find((c) => c.name === name);
+  async findByName(name: string): Promise<Category> {
+    const category = await this.repository.findOne({name});
     return category;
   }
 }
